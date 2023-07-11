@@ -1,0 +1,143 @@
+@import "@/common/styles/variables";
+@import "@/common/styles/mixin";
+
+.eventCard {
+  @include flex-column;
+  @include box(100%, 473px);
+
+  justify-content: flex-end;
+  color: $color-white;
+  max-width: 332px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (hover: hover) {
+  .eventCard:hover {
+    .detailedInfo {
+      right: 0;
+    }
+  }
+}
+
+@media (hover: none) {
+  .show {
+    .detailedInfo {
+      right: 0;
+    }
+  }
+}
+
+.image {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+}
+
+.charityIcon {
+  font-size: 40px;
+  position: absolute;
+  top: 21px;
+  left: 13px;
+}
+
+.previewInfo {
+  @include flex-column;
+  @include font(28px, 900);
+
+  justify-content: flex-end;
+  letter-spacing: 1.44px;
+  padding: 0 10px 20px 30px;
+  height: 210px;
+  background: linear-gradient(180deg, rgba(74, 74, 74, 0.00) 0%, rgba(47, 47, 47, 0.65) 100%);
+  position: relative;
+  z-index: 10;
+
+  p:nth-last-child(1) {
+    @include font(20px, 400);
+    text-transform: capitalize;
+    letter-spacing: 0.4px;
+  }
+
+}
+
+
+.detailedInfo {
+  @include box(100%);
+  @include flex-column;
+
+  justify-content: space-between;
+  position: absolute;
+  z-index: 20;
+  right: -100%;
+  background: $color-grey-400;
+  padding: 30px 31px;
+  transition: right 0.5s ease;
+
+  .name {
+    @include font(22px, 400);
+
+    letter-spacing: 0.48px;
+    margin-bottom: 5px;
+  }
+
+  .description {
+    @include font(16px, 400, normal, 150%);
+    letter-spacing: 0.32px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $number-lines-describe;
+    overflow: hidden;
+  }
+
+  .heart_chat_block {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid $color-white-200;
+    font-size: 23px;
+  }
+
+  .date, .prise, .location {
+    @include flex-center-vertical;
+    @include font(20px, 400);
+    @include truncateOneLine;
+    gap: 16px;
+    margin-top: 10px;
+    letter-spacing: 0.4px;
+  }
+
+  .location {
+    display: flex;
+    margin-bottom: 17px;
+    height: 45px;
+    font-size: 30px;
+
+    p {
+      @include flex-column;
+      @include truncateOneLine;
+      width: 100%;
+      font-size: 20px;
+
+      span {
+        @include truncateOneLine;
+
+        &:nth-last-child(1) {
+          @include font(16px, 400, normal, 150%);
+          letter-spacing: 0;
+          color: $color-grey-100;
+        }
+
+      }
+    }
+  }
+
+  .buttonWrapper {
+    @include flex-center-horizontal;
+
+    button {
+      width: 207px;
+    }
+  }
+}
+

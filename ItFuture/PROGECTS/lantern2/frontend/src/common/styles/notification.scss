@@ -1,0 +1,47 @@
+@import "variables";
+
+@mixin toastStyles($background-color, $color, $border-color) {
+  background-color: $background-color;
+  color: $color;
+  font-size: 10px;
+  border: 1px solid $border-color;
+  line-height: 150%;
+  letter-spacing: 0.32px;
+  border-radius: 0;
+
+  -webkit-box-shadow: -2px 0px 7px -2px $color;
+  box-shadow: -2px 0px 7px -2px $color;
+}
+
+.toast {
+  background-color: $color-grey-400;
+  font-size: 10px;
+}
+
+.success-toast {
+  @include toastStyles($color-grey-400, $color-green-100, $color-green-100);
+}
+
+.info-toast {
+  @include toastStyles($color-grey-400, $color-white, $color-white);
+}
+
+.error-toast {
+  @include toastStyles($color-grey-400, $color-red-100, $color-red-100);
+}
+
+.progress {
+  height: 3px;
+}
+
+.success-progress {
+  background-color: $color-green-100;
+}
+
+.error-progress {
+  background-color: $color-red-100;
+}
+
+.info-progress {
+  background-color: $color-white;
+}

@@ -1,0 +1,40 @@
+@import '@/common/styles/variables';
+@import "@common/styles/mixin";
+
+.list{
+  @include flex-between;
+  .title{
+    display: none;
+  }
+  gap: 30px;
+  @include sm{
+    gap: 60px;
+    .title{
+      display: none;
+    }
+
+  }
+  @include md{
+    gap: 55px;
+
+    .icon{
+      display: none;
+    }
+    .title{
+      display: block;
+    }
+  }
+
+  @include lg{
+    gap: 75px;
+    .title{
+      display: block;
+    }
+  }
+}
+
+.icon{
+  color: $color-white;
+  padding: 5px;
+  font-size: 24px;
+}

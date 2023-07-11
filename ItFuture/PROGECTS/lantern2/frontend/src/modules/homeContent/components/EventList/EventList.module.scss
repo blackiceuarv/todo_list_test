@@ -1,0 +1,19 @@
+@import '@common/styles/mixins/flex';
+
+.title{
+  user-select: none;
+  text-align: center;
+  font-size: 34px;
+  letter-spacing: 0.68px;
+  font-weight: 400;
+  margin-bottom: 60px;
+}
+
+.eventWrapper{
+  display: flex;
+  flex-wrap: wrap;
+  @include flex-center;
+  gap: 24px;
+  user-select: none;
+  margin-bottom: 100px;
+}

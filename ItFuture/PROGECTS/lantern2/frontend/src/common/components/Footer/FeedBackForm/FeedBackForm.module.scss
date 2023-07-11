@@ -1,0 +1,69 @@
+@import "../../../styles/mixin";
+
+.feedBackForm {
+  width: 100%;
+  padding: 0 20px;
+
+  @include lg {
+    padding: 0;
+  }
+
+  h3 {
+    @include font(24px);
+
+    letter-spacing: 0.48px;
+    padding-bottom: 30px;
+  }
+
+  .fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+
+    @include lg {
+      flex-wrap: nowrap;
+      gap: 31px;
+    }
+  }
+
+  .contacts {
+    @include flex-column;
+
+    gap: 21px;
+    width: 100%;
+    min-width: 262px;
+
+    @include lg {
+      width: 262px;
+    }
+  }
+
+  .message {
+    height: 121px;
+
+    @include lg {
+      width: 262px;
+    }
+  }
+
+  .submitBtn {
+    @include box(100%, 42px);
+
+    margin-top: 30px;
+    border: 1px solid #FFFFFF;
+    color: #ECECEC;
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 0.5s ease, color 0.5s ease, scale 0.5s ease;
+
+    &:hover {
+      background: #FFFFFF;
+      color: #0a0a0a;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}

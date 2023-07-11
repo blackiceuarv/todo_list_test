@@ -1,0 +1,12 @@
+@import '../../../common/styles/variables';
+
+.notificationCloseButton {
+  margin-top: 4px;
+  font-size: 10px;
+  color: $color-grey-100;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $color-grey-100;
+  }
+}

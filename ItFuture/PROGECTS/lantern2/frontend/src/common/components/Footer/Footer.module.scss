@@ -1,0 +1,95 @@
+@import "../../styles/mixin";
+
+.footer {
+  @include flex-center-column;
+
+  position: relative;
+  margin-top: auto;
+  min-width: 100%;
+  background-color: #151515;
+  padding: 50px 0 31px 0;
+  border-top: 2px solid #ECECEC;
+
+  @include lg {
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    padding: 157px 0 107px 0;
+    gap: 20px;
+  }
+
+  @include l{
+    gap: 60px;
+  }
+
+  h2 {
+    @include font(34px);
+
+    text-align: center;
+    letter-spacing: 0.68px;
+    margin: 60px 0 30px 0;
+
+    @include lg {
+      position: absolute;
+      top: 0;
+      margin: 50px 0 0 0;
+    }
+  }
+
+  .content {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .infoBlock {
+    @include flex-column;
+
+    gap: 20px;
+
+    @include lg{
+      flex-direction: column-reverse;
+    }
+  }
+
+  .contacts {
+    @include flex-center-column;
+
+    @include lg{
+      @include flex-between;
+
+      flex-direction: row;
+      align-items: flex-end;
+    }
+
+    p {
+      @include flex-column;
+
+      gap: 8px;
+      letter-spacing: 0.32px;
+      align-items: center;
+
+      @include lg{
+        align-items: flex-start;
+        gap: 3px;
+      }
+    }
+
+    .socialMedia {
+      margin-top: 30px;
+    }
+  }
+
+  .mapLink{
+    height: 214px;
+  }
+
+  .map {
+    max-width: 440px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .feedBackFormWrapper {
+    max-width: 556px;
+    width: 100%;
+  }
+}

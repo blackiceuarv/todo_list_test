@@ -1,0 +1,41 @@
+@import "../../styles/mixin";
+
+.textAriaWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.textAria {
+  @include box(100%);
+
+  background: $color-grey-200;
+  resize: none;
+  padding: 15px 25px;
+  color: #ECECEC;
+  border: none;
+  border-bottom: 1px solid transparent;
+  transition: border 0.3s ease-in-out;
+
+  &:focus-visible, &:focus {
+    outline: none;
+  }
+
+  &:hover, &:focus {
+    border-bottom-color: #ECECEC;
+  }
+}
+
+.withError {
+  border-bottom-color: #F33;
+}
+
+.errorMassage {
+  @include font(11px);
+
+  padding: 1px 0 0 0;
+
+  &:before {
+    content: "*";
+    color: #F03;
+  }
+}

@@ -1,0 +1,42 @@
+version: "3"
+
+services:
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    restart: always
+    ports:
+      - 3000:3000
+
+  backend:
+    build: ./backend
+    container_name: backend
+    restart: always
+    ports:
+      - 8000:8000
+    volumes:
+      - env-backend:/env:delegated
+      - ./backend/.env:/app/backend/.env:ro
+      - ./logs/gunicorn/:/var/log/gunicorn/
+      - ./backend/static:/app/backend/static:ro
+      - ./backend/media:/app/backend/media
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - frontend
+      - backend
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/ssl:/etc/nginx/ssl
+      - ./nginx/configs/:/etc/nginx/sites-enabled/:ro
+      - ./backend/static:/app/backend/static:ro
+      - ./backend/media:/app/backend/media
+
+volumes:
+  env-backend: {}

@@ -1,0 +1,71 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.button {
+  @include font(20);
+  @include box(100%, $button-outline-height);
+  min-width: 60px;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  transition: background-color 0.5s ease, color 0.5s ease, scale 0.5s ease;
+
+  &:active {
+    background-color: #cecece;
+    color: #151515;
+  }
+
+  &:disabled {
+    background-color: #151515;
+    color: $color-grey-200;
+    border: none;
+    pointer-events: none;
+  }
+
+}
+
+.outline {
+  border: 0.5px solid #ECECEC;
+  color: #ECECEC;
+
+  &:hover {
+    background-color: #ECECEC;
+    color: #151515;
+  }
+
+}
+
+.with_icon {
+  @include flex-center;
+  @include box(100%, $button-withIcon-height);
+
+  background-color: #ECECEC;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    border-top: 7.43px solid transparent;
+    border-bottom: 7.43px solid transparent;
+    border-left: 13px solid #151515;
+    margin-right: 10px;
+    transition: border-left-color 0.5s ease;
+  }
+
+  &:hover {
+    background-color: #151515;
+    color: #ECECEC;
+  }
+
+  &:hover:before {
+    border-left-color: #ECECEC;
+  }
+
+  &:disabled:before {
+    border-left-color: $color-grey-200;
+  }
+
+}
+
+
+

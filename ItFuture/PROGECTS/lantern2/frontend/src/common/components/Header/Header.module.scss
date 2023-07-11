@@ -1,0 +1,51 @@
+@import '@/common/styles/variables';
+@import "@common/styles/mixin";
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  height: $header-height;
+  padding: 18px 20px 15px 20px;
+  background: rgba($color-grey-300, 0.88);
+  z-index: 100;
+
+  .side {
+    &Left {
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+    }
+
+    &Right {
+      column-gap: 16px;
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+
+      .profile {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .profile {
+    cursor: pointer;
+      width: 50px;
+  }
+
+
+.loginButton{
+  height: 35px;
+}
+  .burger,
+  .logo,
+  .login {
+    flex-shrink: 0;
+  }
+}

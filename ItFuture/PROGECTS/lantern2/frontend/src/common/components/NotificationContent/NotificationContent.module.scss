@@ -1,0 +1,21 @@
+//@import 'common/styles/helpers';
+@import '../../../common/styles/variables';
+
+.notificationContent {
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    margin-bottom: 8px;
+  }
+
+  .body {
+    color: $color-white;
+    font-size: 14px;
+  }
+
+  .button {
+    margin-top: 16px;
+    line-height: 1.3;
+  }
+}
